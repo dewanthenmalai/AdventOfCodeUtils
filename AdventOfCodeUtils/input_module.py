@@ -1,4 +1,4 @@
-def parse_input(puzzle1_handler, puzzle2_handler, puzzle=1, test=False, style="line"):
+def parse_input(puzzle1_handler, puzzle2_handler, puzzle=1, test=False, style="line", delimiter=","):
     filename = ""
     if test:
         filename = "TestInput.txt"
@@ -11,6 +11,8 @@ def parse_input(puzzle1_handler, puzzle2_handler, puzzle=1, test=False, style="l
                 input = [line.strip() for line in f]
             case "grid":
                 input = [[char for char in line.strip()] for line in f]
+            case "list":
+                input = f.read().strip().split(delimiter)
             case _:
                 print(f"Unknown parse style {style}")
                 return
