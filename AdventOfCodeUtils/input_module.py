@@ -9,6 +9,8 @@ def parse_input(puzzle1_handler, puzzle2_handler, puzzle=1, test=False, style="l
         match style:
             case "line":
                 input = [line.strip() for line in f]
+            case "grid":
+                input = [[char for char in line.strip()] for line in f]
             case _:
                 print(f"Unknown parse style {style}")
                 return
