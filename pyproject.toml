@@ -21,4 +21,4 @@ dependencies = [
 dynamic = ["version"]
 
 [tool.setuptools.dynamic]
-version = {attr = "utils.__version__"}
+version = {attr = "AdventOfCodeUtils.__version__"}
