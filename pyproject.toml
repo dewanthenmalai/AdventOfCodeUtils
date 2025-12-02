@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm[toml]>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AdventOfCodeUtils"
+authors = [
+    {name = "Dewan Thenmalai", email = "dewan.thenmalai@gmail.com"},
+]
+description = "A set of utils for Advent of Code, meant for install directly from GitHub"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["Advent of Code"]
+license = "GPL-3.0-only"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "argparse",
+]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "utils.__version__"}
