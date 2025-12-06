@@ -13,6 +13,8 @@ def parse_input(puzzle1_handler, puzzle2_handler, puzzle=1, test=False, style="l
                 input = [[char for char in line.strip()] for line in f]
             case "list":
                 input = f.read().strip().split(delimiter)
+            case "none":
+                input = f.read.strip()
             case _:
                 print(f"Unknown parse style {style}")
                 return
