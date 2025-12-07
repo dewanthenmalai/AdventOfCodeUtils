@@ -32,3 +32,10 @@ def get_adjacent(grid, coord):
 
 def grid_print(grid):
     print("\n".join(["".join(row) for row in grid]))
+
+def get_locations(grid, val):
+    locs = []
+    for i in range(len(grid)):
+        cols = [j for j,x in enumerate(grid[i]) if x == val]
+        locs.extend([(j,i) for j in cols])
+    return locs
