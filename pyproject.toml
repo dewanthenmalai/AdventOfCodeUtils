@@ -17,6 +17,8 @@ classifiers = [
 ]
 dependencies = [
     "argparse",
+    "scipy",
+    "numpy"
 ]
 dynamic = ["version"]
 
