@@ -38,7 +38,7 @@ def last_edge_kruskal_3d(vertex_list):
     edge_set = set()
     for edge in sorted(edges,key=lambda e: e.length):
         if not forest.connected(edge.v1, edge.v2):
-            edge_set |= edge
+            edge_set |= {edge}
             last_edge = edge
             forest.merge(edge.v1, edge.vs)
     return last_edge
@@ -51,6 +51,6 @@ def kruskal_3d(vertex_list):
     edge_set = set()
     for edge in sorted(edges,key=lambda e: e.length):
         if not forest.connected(edge.v1, edge.v2):
-            edge_set |= edge
+            edge_set |= {edge}
             forest.merge(edge.v1, edge.vs)
     return edge_set
