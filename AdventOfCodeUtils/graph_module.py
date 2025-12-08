@@ -30,6 +30,20 @@ def modified_kruskal_3d(vertex_list, iterations):
         forest.merge(edge.v1, edge.v2)
     return forest
 
+def last_edge_kruskal_3d(vertex_list):
+    vertices = [Vertex_3D([int(i) for i in l.split(",")]) for l in vertex_list]
+    edges = get_edges_3d(vertices)
+    forest = DisjointSet(vertices)
+    last_edge = None
+    edge_set = set()
+    for edge in sorted(edges,key=lambda e: e.length):
+        if not forest.connected(edge.v1, edge.v2):
+            edge_set |= edge
+            last_edge = edge
+            forest.merge(edge.v1, edge.vs)
+    return last_edge
+
+
 def kruskal_3d(vertex_list):
     vertices = [Vertex_3D([int(i) for i in l.split(",")]) for l in vertex_list]
     edges = get_edges_3d(vertices)
